@@ -6,7 +6,7 @@ steps:
   
 - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
   entrypoint: gcloud
-  args: ['run', 'deploy','go-microservice', '--image','gcr.io/vibrant-victory-346914/go-microservice', '--region','us-central1', '--platform','managed', '-port','80']
+  args: ['run', 'deploy','go-microservice', '--image','gcr.io/vibrant-victory-346914/go-microservice', '--region','us-central1', '--platform','managed', '--port','80']
 images:
 - gcr.io/vibrant-victory-346914/go-microservice
 
