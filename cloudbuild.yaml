@@ -1,11 +1,11 @@
 steps:
   - id: "docker-build"
     name: "gcr.io/cloud-builders/docker"
-    args: ["build", "-t", "${_IMAGE_NAME}", "go-microservice/."]
+    args: ['build', '-t', 'gcr.io/vibrant-victory-346914/go-microservice','.']
 
   - id: "docker-push"
     name: "gcr.io/cloud-builders/docker"
-    args: ["push", "${_IMAGE_NAME}"]
+    args: ['push', 'gcr.io/vibrant-victory-346914/go-microservice']
 
   - id: "docker-layer"
     name: "gcr.io/cloud-builders/docker"
