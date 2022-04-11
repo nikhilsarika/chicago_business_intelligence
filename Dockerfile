@@ -1,10 +1,13 @@
 # syntax=docker/dockerfile:1
 
+
+FROM golang:1.17-alpine
+
 ENV PORT 80
 ENV HOSTDIR 0.0.0.0
 
 EXPOSE 80
-FROM golang:1.17-alpine
+
 WORKDIR /app
 COPY go.mod ./
 COPY go.sum ./
