@@ -20,7 +20,7 @@ steps:
 
   # For TCP connections
   - id: "migrate-tcp"
-    name: "${_IMAGE_NAME}"
+    name: "${_IMAGE_NAME}-proxy"
     dir: go-microservice
     env:
       - "DATABASE_NAME=${_DATABASE_NAME}"
@@ -29,7 +29,7 @@ steps:
       - "DATABASE_PORT=${_DATABASE_PORT}"
       - "DATABASE_TYPE=${_DATABASE_TYPE}"
       - "DATABASE_PASS=${_DATABASE_PASSWORD_KEY}"
-    entrypoint: /bin/bash
+    entrypoint: /bin/sh
     args:
       - '-c'
       - |
