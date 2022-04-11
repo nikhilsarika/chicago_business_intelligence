@@ -20,7 +20,7 @@ steps:
 
   # For TCP connections
   - id: "migrate-tcp"
-    name: "${_IMAGE_NAME}-proxy"
+    name: "${_IMAGE_NAME}"
     dir: go-microservice
     env:
       - "DATABASE_NAME=${_DATABASE_NAME}"
