@@ -34,11 +34,7 @@ steps:
       - '-c'
       - |
         /cloudsql/cloud_sql_proxy -instances=${_INSTANCE_CONNECTION_NAME}=tcp:${_DATABASE_PORT} & sleep 2;
-  
-  - id: "deploy-image"
-    name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
-    entrypoint: gcloud
-    args: ['run', 'deploy','go-microservice', '--image','gcr.io/vibrant-victory-346914/go-microservice', '--region','us-central1', '--platform','managed', '--port','80']
+        
 options:
   dynamic_substitutions: true
 
