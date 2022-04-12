@@ -201,18 +201,22 @@ func main() {
 	// Once every hour, day, week, etc.
 	// Though, please note that Not all datasets need to be pulled on daily basis
 	// fine-tune the following code-snippet as you see necessary
-	for {
+	//for {
 		// build and fine-tune functions to pull data from different data sources
 		// This is a code snippet to show you how to pull data from different data sources//.
-		GetTaxiTrips(db)
-		GetUnemploymentRates(db)
-		GetBuildingPermits(db)
+		//GetTaxiTrips(db)
+		//GetUnemploymentRates(db)
+		//GetBuildingPermits(db)
 
 		// Pull the data once a day
 		// You might need to pull Taxi Trips and COVID data on daily basis
 		// but not the unemployment dataset becasue its dataset doesn't change every day
-		time.Sleep(24 * time.Hour)
-	}
+		//time.Sleep(24 * time.Hour)
+	//}
+	
+	GetTaxiTrips(db)
+	GetUnemploymentRates(db)
+	GetBuildingPermits(db)
 
 }
 
