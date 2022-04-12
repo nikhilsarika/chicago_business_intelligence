@@ -218,7 +218,7 @@ func main() {
 		// Pull the data once a day
 		// You might need to pull Taxi Trips and COVID data on daily basis
 		// but not the unemployment dataset becasue its dataset doesn't change every day
-		//time.Sleep(24 * time.Hour)
+		time.Sleep(24 * time.Hour)
 	}
 	
 	//GetTaxiTrips(db)
