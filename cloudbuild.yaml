@@ -54,7 +54,7 @@ steps:
   - id: "deploy-microservice"
     name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
     entrypoint: gcloud
-    args: ['run', 'deploy','go-microservice', '--image','gcr.io/vibrant-victory-346914/go-microservice', '--region','us-central1', '--add-cloudsql-instances', 'vibrant-victory-346914:us-central1:mypostgres','--set-env-vars','INSTANCE_UNIX_SOCKET='/cloudsql/vibrant-victory-346914:us-central1:mypostgres'','--set-env-vars','DB_USER='postgres'','--set-env-vars','DB_PASS='root'','--set-env-vars','DB_NAME='chicago_business_intelligence'','--platform','managed', '--port','80']
+    args: ['run', 'deploy','go-microservice', '--image','gcr.io/vibrant-victory-346914/go-microservice', '--region','us-central1', '--add-cloudsql-instances', 'vibrant-victory-346914:us-central1:mypostgres','--platform','managed', '--port','80']
         
 options:
   dynamic_substitutions: true
