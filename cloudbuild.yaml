@@ -51,10 +51,10 @@ steps:
         /cloudsql/cloud_sql_proxy -instances=${_INSTANCE_CONNECTION_NAME} -dir=/cloudsql & sleep 2;
         if [ $_DATABASE_TYPE = 'mssql' ]; then echo "MSSQL doesn't support Unix Sockets. Skippng."; exit 0; fi;
 
-  # - id: "deploy-microservice"
-    # name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
-    # entrypoint: gcloud
-    # args: ['run', 'deploy','go-microservice', '--image','gcr.io/vibrant-victory-346914/go-microservice', '--region','us-central1', '--add-cloudsql-instances', 'vibrant-victory-346914:us-central1:mypostgres','--platform','managed', '--port','80']
+  - id: "deploy-microservice"
+    name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: gcloud
+    args: ['run', 'deploy','go-microservice', '--image','gcr.io/vibrant-victory-346914/go-microservice', '--region','us-central1', '--add-cloudsql-instances', 'vibrant-victory-346914:us-central1:mypostgres','--platform','managed', '--port','80']
         
 options:
   dynamic_substitutions: true
