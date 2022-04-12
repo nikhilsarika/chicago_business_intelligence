@@ -169,7 +169,9 @@ func main() {
 	// Establish connection to Postgres Database
 
 	// OPTION 1 - Postgress application running on localhost
-	db_connection := "user=postgres dbname=chicago_business_intelligence password=root host=localhost sslmode=disable port = 5432"
+	//db_connection := "user=postgres dbname=chicago_business_intelligence password=root host=localhost sslmode=disable port = 5432"
+	
+	db_connection := "user=postgres dbname=chicago_business_intelligence password=root host=vibrant-victory-346914:us-central1:mypostgres sslmode=disable port = 5432"
 
 	// OPTION 2
 	// Docker container for the Postgres microservice - uncomment when deploy with host.docker.internal
