@@ -61,8 +61,9 @@ import (
 	"io/ioutil"
 	"net/http"
 	"strconv"
-	//"time"
-
+	"time"
+	"os"
+	"log"
 	"database/sql"
 	"encoding/json"
 
@@ -189,6 +190,12 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	
+	port := os.Getenv("PORT")
+	if port == "" {
+        port = "8080"
+	}
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), nil))
 
 	// Test the database connection
 	//err = db.Ping()
@@ -201,22 +208,22 @@ func main() {
 	// Once every hour, day, week, etc.
 	// Though, please note that Not all datasets need to be pulled on daily basis
 	// fine-tune the following code-snippet as you see necessary
-	//for {
+	for {
 		// build and fine-tune functions to pull data from different data sources
 		// This is a code snippet to show you how to pull data from different data sources//.
-		//GetTaxiTrips(db)
-		//GetUnemploymentRates(db)
-		//GetBuildingPermits(db)
+		GetTaxiTrips(db)
+		GetUnemploymentRates(db)
+		GetBuildingPermits(db)
 
 		// Pull the data once a day
 		// You might need to pull Taxi Trips and COVID data on daily basis
 		// but not the unemployment dataset becasue its dataset doesn't change every day
 		//time.Sleep(24 * time.Hour)
-	//}
+	}
 	
-	GetTaxiTrips(db)
-	GetUnemploymentRates(db)
-	GetBuildingPermits(db)
+	//GetTaxiTrips(db)
+	//GetUnemploymentRates(db)
+	//GetBuildingPermits(db)
 
 }
 
