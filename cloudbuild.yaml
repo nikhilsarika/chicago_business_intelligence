@@ -35,7 +35,7 @@ steps:
       - |
         /cloudsql/cloud_sql_proxy -instances=${_INSTANCE_CONNECTION_NAME}=tcp:${_DATABASE_PORT} & sleep 2;
    
-   - id: "migrate-socket"
+  - id: "migrate-socket"
     name: "${_IMAGE_NAME}-proxy"
     dir: go-microservice
     env:
