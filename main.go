@@ -191,11 +191,11 @@ func main() {
 	}
 
 	// Test the database connection
-	err = db.Ping()
-	if err != nil {
-		fmt.Println("Couldn't Connect to database")
-		panic(err)
-	}
+	//err = db.Ping()
+	//if err != nil {
+	//	fmt.Println("Couldn't Connect to database")
+	//	panic(err)
+	//}
 
 	// Spin in a loop and pull data from the city of chicago data portal
 	// Once every hour, day, week, etc.
