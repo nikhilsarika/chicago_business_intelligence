@@ -172,7 +172,6 @@ func main() {
 	// OPTION 1 - Postgress application running on localhost
 	//db_connection := "user=postgres dbname=chicago_business_intelligence password=root host=localhost sslmode=disable port = 5432"
 	
-	db_connection := "user=postgres dbname=chicago_business_intelligence password=root host=/cloudsql/vibrant-victory-346914:us-central1:mypostgres sslmode=disable port = 5432"
 
 	// OPTION 2
 	// Docker container for the Postgres microservice - uncomment when deploy with host.docker.internal
@@ -184,6 +183,10 @@ func main() {
 	// To find your Postgres container IP, use the command with your network name listed in the docker compose file as follows: 
 	// docker network inspect cbi_backend
 	//db_connection := "user=postgres dbname=chicago_business_intelligence password=root host=172.19.0.2 sslmode=disable port = 5433"
+	
+	//Option 4
+	//Database application running on Google Cloud Platform. 
+	db_connection := "user=postgres dbname=chicago_business_intelligence password=root host=/cloudsql/chicago-business-intelligence:us-central1:mypostgres sslmode=disable port = 5432"
 	
 
 	db, err := sql.Open("postgres", db_connection)
