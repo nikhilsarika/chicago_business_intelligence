@@ -194,11 +194,7 @@ func main() {
 		panic(err)
 	}
 	
-	port := os.Getenv("PORT")
-	if port == "" {
-        port = "8080"
-	}
-	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), nil))
+
 
 	// Test the database connection
 	//err = db.Ping()
@@ -223,6 +219,13 @@ func main() {
 		// but not the unemployment dataset becasue its dataset doesn't change every day
 		time.Sleep(24 * time.Hour)
 	}
+	
+	
+	port := os.Getenv("PORT")
+	if port == "" {
+        port = "8080"
+	}
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), nil))
 	
 	//GetTaxiTrips(db)
 	//GetUnemploymentRates(db)
