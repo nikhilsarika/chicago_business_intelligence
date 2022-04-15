@@ -11,5 +11,5 @@ steps:
   args: ['run', 'deploy','go-microservice', '--image','gcr.io/chicago-business-intelligence/go-microservice', '--region','us-central1', '--add-cloudsql-instances', 'chicago-business-intelligence:us-central1:mypostgres','--platform','managed', '--port','8080', '--allow-unauthenticated',]
 images:
 - gcr.io/chicago-business-intelligence/go-microservice
-- gcr.io/chicago-business-intelligence/pgadmin
+
 

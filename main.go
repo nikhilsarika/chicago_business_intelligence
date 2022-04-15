@@ -188,6 +188,11 @@ func main() {
 	//Database application running on Google Cloud Platform. 
 	db_connection := "user=postgres dbname=chicago_business_intelligence password=root host=/cloudsql/chicago-business-intelligence:us-central1:mypostgres sslmode=disable"
 	
+	
+	//Option 5
+	//Database application running on Google Cloud Platform. 
+	db_connection := "user=postgres dbname=chicago_business_intelligence password=root host=postgres-irbuw5og3a-uc.a.run.app sslmode=disable"
+	
 
 	db, err := sql.Open("postgres", db_connection)
 	if err != nil {
