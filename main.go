@@ -170,7 +170,7 @@ func main() {
 	// Establish connection to Postgres Database
 
 	// OPTION 1 - Postgress application running on localhost
-	//db_connection := "user=postgres dbname=chicago_business_intelligence password=root host=localhost sslmode=disable port = 5432"
+	//db_connection := "user=postgres dbname=chicago_business_intelligence password=root host=postgres-irbuw5og3a-uc.a.run.app port = 5435"
 	
 
 	// OPTION 2
@@ -186,12 +186,12 @@ func main() {
 	
 	//Option 4
 	//Database application running on Google Cloud Platform. 
-	//db_connection := "user=postgres dbname=chicago_business_intelligence password=root host=/cloudsql/chicago-business-intelligence:us-central1:mypostgres sslmode=disable"
+	db_connection := "user=postgres dbname=chicago_business_intelligence password=root host=/cloudsql/chicago-business-intelligence:us-central1:mypostgres sslmode=disable"
 	
 	
 	//Option 5
 	//Database application running on Google Cloud Platform. 
-	db_connection := "user=postgres dbname=chicago_business_intelligence password=root host=postgres-irbuw5og3a-uc.a.run.app sslmode=disable"
+	//db_connection := "user=postgres dbname=chicago_business_intelligence password=root host=postgres-irbuw5og3a-uc.a.run.app sslmode=disable"
 	
 
 	db, err := sql.Open("postgres", db_connection)
