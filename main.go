@@ -184,6 +184,7 @@ func main() {
 	// docker network inspect cbi_backend
 	//db_connection := "user=postgres dbname=chicago_business_intelligence password=root host=172.19.0.2 sslmode=disable port = 5433"
 	
+	
 	//Option 4
 	//Database application running on Google Cloud Platform. 
 	db_connection := "user=postgres dbname=chicago_business_intelligence password=root host=/cloudsql/chicago-business-intelligence:us-central1:mypostgres sslmode=disable"
