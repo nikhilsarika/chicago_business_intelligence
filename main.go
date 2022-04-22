@@ -212,7 +212,7 @@ func main() {
 	for {
 		// build and fine-tune functions to pull data from different data sources
 		// This is a code snippet to show you how to pull data from different data sources//.
-		GetTaxiTrips(db)
+		//GetTaxiTrips(db)
 		GetUnemploymentRates(db)
 		GetBuildingPermits(db)
 		
