@@ -218,15 +218,10 @@ func main() {
 	for {
 		// build and fine-tune functions to pull data from different data sources
 		// This is a code snippet to show you how to pull data from different data sources//.
-		//GetTaxiTrips(db)
+		GetTaxiTrips(db)
 		GetUnemploymentRates(db)
 		GetBuildingPermits(db)
-		
-		port := os.Getenv("PORT")
-		if port == "" {
-			port = "8080"
-		}
-		log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), nil))																																				
+																																					
 
 		// Pull the data once a day
 		// You might need to pull Taxi Trips and COVID data on daily basis
@@ -234,12 +229,6 @@ func main() {
 		time.Sleep(24 * time.Hour)
 	}
 	
-	
-	port := os.Getenv("PORT")
-	if port == "" {
-        port = "8080"
-	}
-	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), nil))
 	
 	//GetTaxiTrips(db)
 	//GetUnemploymentRates(db)
