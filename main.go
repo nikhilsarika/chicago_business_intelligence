@@ -189,6 +189,7 @@ func main() {
 	//Database application running on Google Cloud Platform. 
 	db_connection := "user=postgres dbname=chicago_business_intelligence password=root host=/cloudsql/chicago-business-intelligence:us-central1:mypostgres sslmode=disable"
 	
+	time.Sleep(30 * time.Second)
 	
 
 	db, err := sql.Open("postgres", db_connection)
@@ -196,6 +197,11 @@ func main() {
 		panic(err)
 	}
 	
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", port), nil))
 
 
 	// Test the database connection
